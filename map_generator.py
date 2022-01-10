@@ -1,6 +1,6 @@
 import geopandas as gpd
 from pathlib import Path
- 
+import argparse
  
 class MapGenerator(object):
     
@@ -16,7 +16,7 @@ class MapGenerator(object):
     
         Name of district of which map is needed.
         
-    out_format : str
+    out_format : str default : png
         
         Format of image output. Normal formats supported by matplotlib `savefig()`.
         
@@ -28,7 +28,7 @@ class MapGenerator(object):
     
     """
     
-    def __init__(self, district: str, out_format: str):
+    def __init__(self, district: str, out_format: str = 'png'):
         self.district = district.lower()
         self.out_format = out_format.lower()
         
@@ -78,5 +78,17 @@ class MapGenerator(object):
         
         
 if __name__=='__main__':
-    maps = MapGenerator('Kollam','png')
-    maps.plot_map(cmap= True)
+    parser = argparse.ArgumentParser("Generates map of given district of kerala with localbody boundaries.")
+    parser.add_argument("-d", "--district", required=True, type = str, help= 'District name')
+    parser.add_argument("-f", "--format", required=False, type = str, help= 'Output image format (default: png)')
+    parser.add_argument("-c", "--cmap", required=False, type = bool, help= 'If coloured map is required, use True. else use False.(default : True)')
+    
+    args = parser.parse_args()
+    if args.format == True:
+        maps = MapGenerator(args.district, args.format)
+    else:
+        maps = MapGenerator(args.district)
+    if args.cmap == True:
+        maps.plot_map(cmap= args.cmap)
+    else:
+        maps.plot_map()
