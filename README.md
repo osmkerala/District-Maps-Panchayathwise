@@ -38,7 +38,19 @@ As of now, geojson files of Kollam and Kozhikode are added to the folder `geojso
     
 4. Map file is generated in `maps` folder.
 
+### Sample Map
+
+#### Coloured Map
+
+![kollam-cmap](maps/Kollam.png)
+
+#### Black and White Map
+
+![kollam-no-cmap](maps/Kollam_no_cmap.png)
+
 ### Generate GeoJson from OpenstreetMap
+
+goto [Overpass](http://overpass-turbo.eu/) and use the code below:
 
 	[out:xml][timeout:500];
 	{{geocodeArea:Kozhikode district}}->.searchArea;
@@ -49,7 +61,6 @@ As of now, geojson files of Kollam and Kozhikode are added to the folder `geojso
 	out meta;
 	>;
 	out meta qt;
-
 
 change district name to desired one.
 
