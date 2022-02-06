@@ -52,15 +52,17 @@ As of now, geojson files of Kollam and Kozhikode are added to the folder `geojso
 
 - goto [Overpass](http://overpass-turbo.eu/) and use the code below:
 
-	[out:xml][timeout:500];
-	{{geocodeArea:Kozhikode district}}->.searchArea;
-	(
-	   nwr["boundary"="local_authority"]["admin_level"="8"](area.searchArea);
-	);
-	// print results
-	out meta;
-	>;
-	out meta qt;
+```
+    [out:xml][timeout:500];
+    {{geocodeArea:Kozhikode district}}->.searchArea;
+    (
+        nwr["boundary"="local_authority"]["admin_level"="8"](area.searchArea);
+    );
+    // print results
+    out meta;
+    >;
+    out meta qt;
+```
 
 change district name to desired one.
 
