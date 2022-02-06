@@ -102,7 +102,7 @@ Please use the exact OSM district name or OSM area code from the table below:
 
 ### References
 
-1. [https://wiki.openstreetmap.org/wiki/Local_Bodies_in_Kerala](https://wiki.openstreetmap.org/wiki/Local_Bodies_in_Kerala) https://wiki.openstreetmap.org/wiki/Local_Bodies_in_Kerala
+1. [https://wiki.openstreetmap.org/wiki/Local_Bodies_in_Kerala](https://wiki.openstreetmap.org/wiki/Local_Bodies_in_Kerala)
 2. [http://overpass-turbo.eu/](http://overpass-turbo.eu/) http://overpass-turbo.eu/
 3. [https://opendatakerala.org/](https://opendatakerala.org/) https://opendatakerala.org/
 4. Various solved answers from [Stack Overflow](https://stackoverflow.com/)
